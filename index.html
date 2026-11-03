@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ヴェクリス — Apple Watch の記録を、あなたのふだんと比べる</title>
+<meta name="description" content="iPhone 向けアプリ「ヴェクリス」。Apple Watch が毎日測っている睡眠・心拍変動・安静時心拍を、あなた自身のふだんと比べ、今日の調子を毎朝ひとつの点数で示します。数値・グラフ・記録は無料。">
+<meta property="og:title" content="ヴェクリス — Apple Watch の記録を、あなたのふだんと比べる">
+<meta property="og:description" content="睡眠・心拍変動・安静時心拍を、あなた自身のふだんと比べて、今日の調子を毎朝ひとつの点数に。">
+<meta property="og:image" content="https://jmorningdev.github.io/vecris-site/img/01.jpg">
+<meta property="og:url" content="https://jmorningdev.github.io/vecris-site/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6809078064">
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141924; --sunken:#1d2430; --rule:#38455c;
+    --text:#e9edf4; --muted:#a9b4c6; --accent:#4cd9c8;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f1f4f8; --panel:#ffffff; --sunken:#e4e9f0; --rule:#9aa5b4;
+      --text:#141a23; --muted:#4a5666; --accent:#0f7d72;
+    }
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    font-size:17px;
+    font-weight:400;
+    line-height:1.7;
+  }
+  .wrap{ max-width:40rem; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
+  header{ border-bottom:1px solid var(--rule); padding-bottom:1.5rem; margin-bottom:2rem; }
+  h1{ font-size:28px; line-height:1.35; font-weight:700; margin:0 0 .75rem; }
+  h2{ font-size:21px; line-height:1.35; font-weight:700; margin:2.75rem 0 .75rem; }
+  h3{ font-size:17px; line-height:1.5; font-weight:700; margin:1.75rem 0 .4rem; }
+  p{ margin:0 0 1rem; }
+  ul{ margin:0 0 1rem; padding-left:1.25rem; }
+  li{ margin:0 0 .4rem; }
+  a{ color:var(--accent); text-underline-offset:.2em; }
+  .lede{ color:var(--muted); }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    padding:1.25rem 1.25rem .5rem;
+    margin:1.25rem 0 2rem;
+  }
+  .card p:last-child{ margin-bottom:1rem; }
+  .mail{ font-weight:700; font-size:19px; word-break:break-all; }
+  .note{ color:var(--muted); font-size:15px; line-height:1.7; }
+  footer{
+    margin-top:3.5rem; padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+    color:var(--muted); font-size:15px;
+  }
+  footer p{ margin:0 0 .6rem; }
+
+  .cta{ display:inline-block; background:var(--accent); color:var(--bg); font-weight:700; text-decoration:none; padding:.8rem 1.4rem; border-radius:12px; margin:.5rem 0 .25rem; }
+  figure{ margin:1.5rem 0 2.25rem; }
+  figure img{ width:100%; max-width:22rem; height:auto; display:block; margin:0 auto; border-radius:18px; border:1px solid var(--rule); }
+  figcaption{ color:var(--muted); font-size:15px; text-align:center; margin-top:.6rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>ヴェクリス</h1>
+  <p class="lede">Apple Watch が毎日測っているのに、ほとんど見られていない数字があります。ヴェクリスは、それをあなた自身のふだんと比べて、毎朝、今日の調子をひとつの点数と、睡眠・回復・活動の 3 つのリングで示します。</p>
+  <p><a class="cta" href="https://apps.apple.com/jp/app/id6809078064">App Store で見る（無料）</a></p>
+  <p class="note">iPhone 向け・日本の App Store のみ。心拍変動などは Apple Watch の記録を使います。</p>
+</header>
+
+<figure>
+  <img src="img/01.jpg" alt="今日の画面。ひとつの点数と、睡眠・回復・活動の 3 つのリング" width="506" height="1100" loading="lazy">
+</figure>
+
+<h2>基準は、平均ではなくあなたのふだん</h2>
+<p>睡眠時間・深い睡眠・心拍変動・安静時心拍・呼吸数・歩数。それぞれに「あなたのふだんの範囲」の帯を引き、今日の値がどこにあるかを示します。世間の目安ではなく、あなた自身の過去の記録が基準です。</p>
+
+<figure>
+  <img src="img/04.jpg" alt="習慣をやった日とやらなかった日で、翌朝の値を比べる画面" width="506" height="1100" loading="lazy">
+</figure>
+
+<h2>続けたことの効き目が、あなたの数字で出ます</h2>
+<p>歩数と翌朝の体重、眠りと翌日の元気さ、習慣をやった日とやらなかった日。あなたの記録どうしを実際に比べ、たまたまの差は拾いません。</p>
+
+<h2>無料でできること・AI プラン</h2>
+<ul>
+  <li><strong>無料</strong>: 数値の表示・グラフ・記録・習慣の統計・論文の参照</li>
+  <li><strong>AI プラン（自動更新の購読）</strong>: AI による読み解き・体調タイプ・相談・コーチ・目標の計画・食事写真の解析。料金は App Store の「App内課金」と、アプリの購入画面に表示されます</li>
+</ul>
+
+<h2>あなたの記録は、あなたのもの</h2>
+<p>記録は iPhone の中にあります。ヘルスケアから読み込んだデータを、広告に使うことは一切ありません。外部の AI（Google の Gemini）に送るかはあなたが選び、選ばなければ外部の AI へは何も送りません。詳しくは<a href="privacy/">プライバシーポリシー</a>をご覧ください。</p>
+
+<p class="note">本アプリは医療機器ではなく、病気の診断・治療を目的としたものではありません。表示される値は、あなた自身の過去の記録から算出した推定値です。体調の判断や受診については、医師にご相談ください。</p>
+
+<p><a class="cta" href="https://apps.apple.com/jp/app/id6809078064">App Store で見る（無料）</a></p>
+
+<footer>
+  <p><a href="support/">サポート・お問い合わせ</a> ／ <a href="privacy/">プライバシーポリシー</a></p>
+  <p>最終更新: 2026年11月4日</p>
+</footer>
+
+</div>
+</body>
+</html>
