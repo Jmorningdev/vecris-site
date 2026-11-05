@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>心拍変動（HRV）とは？ Apple Watch の値の見方と、ふだんの範囲 — ヴェクリス</title>
+<meta name="description" content="Apple Watch の心拍変動（HRV）が低いのは問題？ 心拍変動は人による違いが大きく、年齢や性別、測った時刻や測り方でも値が変わるため、ほかの人の値や研究の平均と比べにくい数字です。研究の数字と、自分のふだんの範囲と比べる方法をまとめました。">
+<link rel="canonical" href="https://jmorningdev.github.io/vecris-site/articles/hrv/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心拍変動（HRV）とは？ Apple Watch の値の見方と、ふだんの範囲">
+<meta property="og:description" content="Apple の資料と研究の数字で見る、心拍変動の値の見方と、自分のふだんの範囲と比べる方法。">
+<meta property="og:url" content="https://jmorningdev.github.io/vecris-site/articles/hrv/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="ヴェクリス">
+<meta name="apple-itunes-app" content="app-id=6809078064">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "心拍変動（HRV）とは？ Apple Watch の値の見方と、ふだんの範囲",
+  "description": "Apple の資料と研究の数字で見る、心拍変動の値の見方と、自分のふだんの範囲と比べる方法。",
+  "inLanguage": "ja",
+  "datePublished": "2026-11-06",
+  "dateModified": "2026-11-06",
+  "mainEntityOfPage": "https://jmorningdev.github.io/vecris-site/articles/hrv/",
+  "author": { "@type": "Organization", "name": "ヴェクリス", "url": "https://jmorningdev.github.io/vecris-site/" },
+  "publisher": { "@type": "Organization", "name": "ヴェクリス", "url": "https://jmorningdev.github.io/vecris-site/" }
+}
+</script>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141924; --sunken:#1d2430; --rule:#38455c;
+    --text:#e9edf4; --muted:#a9b4c6; --accent:#4cd9c8;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f1f4f8; --panel:#ffffff; --sunken:#e4e9f0; --rule:#9aa5b4;
+      --text:#141a23; --muted:#4a5666; --accent:#0f7d72;
+    }
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    font-size:17px;
+    font-weight:400;
+    line-height:1.7;
+  }
+  .wrap{ max-width:40rem; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
+  header{ border-bottom:1px solid var(--rule); padding-bottom:1.5rem; margin-bottom:2rem; }
+  h1{ font-size:28px; line-height:1.35; font-weight:700; margin:0 0 .75rem; }
+  h2{ font-size:21px; line-height:1.35; font-weight:700; margin:2.75rem 0 .75rem; }
+  h3{ font-size:17px; line-height:1.5; font-weight:700; margin:1.75rem 0 .4rem; }
+  p{ margin:0 0 1rem; }
+  ul,ol{ margin:0 0 1rem; padding-left:1.25rem; }
+  li{ margin:0 0 .4rem; }
+  a{ color:var(--accent); text-underline-offset:.2em; }
+  .lede{ color:var(--muted); }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    padding:1.25rem 1.25rem .5rem;
+    margin:1.25rem 0 2rem;
+  }
+  .card p:last-child{ margin-bottom:1rem; }
+  .note{ color:var(--muted); font-size:15px; line-height:1.7; }
+  footer{
+    margin-top:3.5rem; padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+    color:var(--muted); font-size:15px;
+  }
+  footer p{ margin:0 0 .6rem; }
+  .cta{ display:inline-block; background:var(--accent); color:var(--bg); font-weight:700; text-decoration:none; padding:.8rem 1.4rem; border-radius:12px; margin:.5rem 0 .25rem; }
+  .crumb{ font-size:15px; margin:0 0 1rem; }
+  table{ border-collapse:collapse; margin:0 0 1rem; background:var(--panel); border:1px solid var(--rule); }
+  th,td{ border:1px solid var(--rule); padding:.4rem .9rem; text-align:left; }
+  th{ background:var(--sunken); font-weight:700; white-space:nowrap; }
+  h1,h2,h3{ text-wrap:balance; word-break:keep-all; word-break:auto-phrase; overflow-wrap:anywhere; }
+  .refs{ font-size:15px; color:var(--muted); padding-left:1.5rem; }
+  .refs li{ word-break:break-word; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="crumb"><a href="../../">ヴェクリス</a></p>
+  <h1>心拍変動<wbr>（HRV）とは？ <span style="white-space:nowrap">Apple Watch</span> の<wbr>値の<wbr>見方と、<wbr>ふだんの<wbr>範囲</h1>
+  <p class="lede">「<span style="white-space:nowrap">Apple Watch</span> の心拍変動が40ミリ秒。これは低いのか」。先に答えを書くと、心拍変動は人による違いが大きく、年齢や性別、測った時刻、測り方でも値が変わるため、ほかの人の値や研究の平均と比べて高い・低いを決めにくい数字です<a href="#r3">[3]</a><a href="#r4">[4]</a><a href="#r5">[5]</a><a href="#r6">[6]</a>。この記事では、Apple の資料と研究の数字をまとめ、最後に、自分のふだんの範囲と比べる方法を紹介します。</p>
+  <p class="note">2026年11月6日</p>
+</header>
+
+<h2>心拍変動<wbr>とは</h2>
+<p>心拍変動（HRV）は、続けて打つ心拍と心拍の間隔が、どれくらい変わるかを表す値です<a href="#r3">[3]</a>。計算のしかたはいくつかあります。Apple の開発者向けの資料によると、ヘルスケアに記録される心拍変動は、正常な心拍の間隔の標準偏差（SDNN）で、ふつうはミリ秒で表します。値は <span style="white-space:nowrap">Apple Watch</span> が自動で記録します<a href="#r1">[1]</a>。「正常な心拍」とは、期外収縮（心臓の中のふだんとは別の場所から始まる拍）などを除いた、という意味です<a href="#r3">[3]</a>。</p>
+<p>研究の分野では、心拍変動は自律神経の働きを調べる指標の1つとして使われています<a href="#r6">[6]</a>。ただし、同じ SDNN でも、数分の安静の記録と24時間の記録では、値どうしの相関が弱く、表しているものが違うことがあるとされています<a href="#r3">[3]</a>。</p>
+
+<h2>値の<wbr>高い・<wbr>低いは<wbr>何を<wbr>表すか</h2>
+<p>心拍変動の指標を整理した総説によると、SDNN などの指標は、持久力が高まると上がり、一般に健康を損なうと下がります。一方で、測ったときの姿勢や体の動き、直前に体を動かしたか、呼吸のしかたなどでも値は動き、大きく動くこともあります<a href="#r3">[3]</a>。心拍変動の値だけで、体の状態を決めることはできません。</p>
+<p>資料と研究が挙げている、値に関わるものは次のとおりです。</p>
+<ul>
+  <li>年齢・性別: 年齢とともに下がります<a href="#r5">[5]</a><a href="#r6">[6]</a>。30歳未満では、女性のほうが男性より低い値でした<a href="#r5">[5]</a>。</li>
+  <li>1日の中の時刻: 時刻によって大きく変わります<a href="#r6">[6]</a>。</li>
+  <li>心拍の速さ: 心拍が速いと拍と拍の間の時間が短くなり、間隔が変わる余地が小さくなるので、心拍変動は低くなります<a href="#r3">[3]</a>。</li>
+  <li>お酒: 同じ人の、飲んだ日と飲まなかった日の夜を比べた研究で、眠り始めの3時間の RMSSD（続けて打つ拍の差で見る指標で、ヘルスケアに記録される SDNN とは別のもの）は、飲んだ量が少ない日で平均2.0ミリ秒、中くらいの日で5.7ミリ秒、多い日で12.9ミリ秒低くなっていました。量は、体重1kgあたりの純アルコールで0.25g以下、0.25gを超えて0.75gまで、0.75gを超える量です<a href="#r7">[7]</a>。</li>
+  <li>体を動かす量: 測った日までの90日間で、1日あたりの歩数が多い人ほど、心拍変動の指標が高い関係がみられました。体を動かすと心拍変動が高くなるかは、これから試験で調べる必要がある、と著者らは書いています<a href="#r6">[6]</a>。</li>
+  <li>薬・標高・病気など: Apple は、服用中の薬、標高、アルコールの量、病気などが、バイタルの指標に影響する可能性があると書いています<a href="#r2">[2]</a>。</li>
+</ul>
+
+<h2>Apple の<wbr>資料：<wbr>バイタルの<wbr>「通常範囲」</h2>
+<p>Apple のサポートは、<span style="white-space:nowrap">Apple Watch</span> の「バイタル」アプリについて、次のように書いています<a href="#r2">[2]</a>。</p>
+<ul>
+  <li>日中と寝るときに <span style="white-space:nowrap">Apple Watch</span> を着けていると、バイタルアプリが夜間と日中の指標を推定し、指標ごとの通常範囲を作る。</li>
+  <li>前もって「睡眠」を設定し、「Apple Watchで睡眠時間を記録」と「睡眠」集中モードをオンにしておき、7日間 <span style="white-space:nowrap">Apple Watch</span> を着けて眠ると、通常範囲ができる。</li>
+  <li>心拍変動がバイタルに入るのは、<span style="white-space:nowrap">Apple Watch</span> Series 12 と <span style="white-space:nowrap">Apple Watch</span> Ultra 4 だけ。</li>
+  <li><span style="white-space:nowrap">Apple Watch</span> は、ゆるすぎるとセンサーが正確に測れないことがあるので、ぴったり着ける。</li>
+  <li>バイタルアプリの測定値は、医療目的での使用を想定していない。</li>
+</ul>
+
+<h2>研究の<wbr>数字：<wbr>心拍変動に<wbr>「ふつうの<wbr>値」は<wbr>あるか</h2>
+<p>健康な人の平均の数字はありますが、測り方や年齢で値が変わるため、<span style="white-space:nowrap">Apple Watch</span> の値をそのまま当てはめられる「ふつうの値」は、この記事の資料にはありませんでした。</p>
+
+<h3>健康な<wbr>大人の<wbr>44の<wbr>研究を<wbr>まとめた<wbr>論文<wbr>（2010年）</h3>
+<p>健康な大人の短い記録（5分ほど）の心拍変動を調べた44の研究（合計21,438人）をまとめた論文です<a href="#r4">[4]</a><a href="#r3">[3]</a>。この論文の数字を紹介した総説によると、SDNN を出していた27の研究から求めた平均は50ミリ秒でした。この中には40歳以上だけを集めた大きな集団が3つ入っていて、それが値が低めに出た理由かもしれない、と総説は書いています<a href="#r3">[3]</a>。論文の著者らは、人による違いがとても大きい研究もあったこと、研究どうしで値が食い違う元として、記録から心拍の間隔を拾い出したり、誤りを直したりする手順の違いがあることを挙げています<a href="#r4">[4]</a>。</p>
+
+<h3>260人の<wbr>24時間の<wbr>記録<wbr>（1998年）</h3>
+<p>10〜99歳の健康な260人の24時間の記録を、10歳ごとに調べた研究です。心拍変動は年齢とともに下がり、SDNN はゆっくり下がって、90代で10代の値の約6割でした。30歳未満では、どの指標も女性のほうが男性より低く、差は30歳を過ぎると小さくなり、50歳を超えると見られなくなりました<a href="#r5">[5]</a>。</p>
+
+<h3>手首の<wbr>機器で<wbr>測った<wbr>800万人の<wbr>記録<wbr>（2020年）</h3>
+<p><span style="white-space:nowrap">Apple Watch</span> とは別の会社の、手首に着ける機器の利用者8,203,261人について、無作為に選んだ1日（24時間）の心拍の間隔の記録から、5分ごとに心拍変動を計算した研究です。心拍変動の指標は年齢とともに下がり、1日の中でも時刻によって大きく変わっていました。SDRR（SDNN と同じく間隔の標準偏差ですが、ふだんと違う拍も除かずに入れたもの<a href="#r3">[3]</a>）は男女で差があり、RMSSD では差が見られませんでした。著者らは、年齢と性別ごとの値の表を出し、こうした分布を個人の値を読む枠組みに使える可能性がある、と結んでいます<a href="#r6">[6]</a>。</p>
+
+<h2>研究の<wbr>数字の<wbr>読み方</h2>
+<p>ここまでの研究は、記録が5分か24時間か、どの指標か、どんな機器で測ったかがそれぞれ違います。どれも参加した人たちの平均で、あなたにそのまま当てはまるとは限りません。総説は、記録が長いほど心拍変動は大きくなるので、長さの違う記録で計算した SDNN を比べるのは適切ではない、としています<a href="#r3">[3]</a>。Apple の資料<a href="#r1">[1]</a><a href="#r2">[2]</a>には、<span style="white-space:nowrap">Apple Watch</span> の1回の値を何分の記録から計算するかは書かれていないので、44の研究をまとめた論文の、SDNN の平均の50ミリ秒と並べて、高い・低いを決めることはできません。800万人の研究も、<span style="white-space:nowrap">Apple Watch</span> とは別の機器で5分ごとに計算した値です。</p>
+<p>まとめると、心拍変動は人による違いが大きく、年齢とともに下がる傾向があり、性別や1日の中の時刻、記録の長さ、心拍の速さ、お酒などでも値が変わります。Apple も、Series 12 と Ultra 4 のバイタルアプリで、本人が7日間 <span style="white-space:nowrap">Apple Watch</span> を着けて眠った記録から、通常範囲を作るとしています<a href="#r2">[2]</a>。冒頭の「40ミリ秒は低いのか」は、研究の平均ではなく、同じ <span style="white-space:nowrap">Apple Watch</span> で測ったあなたのふだんの値と比べて見ます。その方法を次に書きます。</p>
+
+<h2>自分の<wbr>ふだんと<wbr>比べる<wbr>方法</h2>
+<ol>
+  <li>iPhone の「ヘルスケア」に残る心拍変動の記録を使います。<span style="white-space:nowrap">Apple Watch</span> は、毎日、手首にぴったり着けます。</li>
+  <li>1日の値で判断せず、数週間ぶんの毎日の値をメモなどに書き出して、真ん中あたりの値と、多くの日が収まる幅を見ます。</li>
+  <li>ふだんの幅から外れた日は、その日の睡眠時間やお酒、体調など、あったことを書いておきます。外れた日がたまったら、何が重なっていたかを見ます。</li>
+</ol>
+<p>外れた日に同じことが重なっていても、それが原因とは限りません。たまたま同じ日に起きた、ほかのことが関わっているかもしれません。</p>
+
+<h2>ヴェクリスで<wbr>見られる<wbr>こと</h2>
+<div class="card">
+  <p>iPhone のアプリ「ヴェクリス」の「今日」の画面にある「今日の数値」には、心拍変動の行があります。今日の値が「ms」（ミリ秒）で出て、その右に、あなたのふだんの範囲が「ふだん <span style="white-space:nowrap">40–50</span>」のように両端の数字で出ます（数字は例です）。</p>
+  <p>ふだんの範囲は、今日より前の28日のうち、心拍変動の記録がある日の値から、1日だけ飛び抜けた値に引っぱられにくい計算で作ります。記録が7日ぶんたまるまでは範囲は出ず、あと何日ぶん要るかが出ます。今日の値がふだんの範囲から大きく外れた日には、高い側でも低い側でも「！」の印が付きます。範囲と値が出ている日に行を押すと、範囲の両端と真ん中の値、範囲を作った日数が出ます。</p>
+  <p>この表示は無料です。外部の AI があなたの記録を読み解く機能は、有料の AI プラン（自動更新の購読）で使えます。</p>
+  <p><a class="cta" href="https://go.waitlab.workers.dev/vecris-article6">App Store で見る</a></p>
+  <p class="note">iPhone 向け・日本の App Store のみ。心拍変動は、<span style="white-space:nowrap">Apple Watch</span> の記録を使います。</p>
+</div>
+
+<p class="note">この記事は一般的な情報で、医療上の助言ではありません。持病がある方、薬を飲んでいる方、心臓や体調のことで気になることがある方は、数字で判断せず、医師に相談してください。</p>
+
+<h2>出典</h2>
+
+<ol class="refs">
+  <li id="r1">Apple Developer Documentation「heartRateVariabilitySDNN」（HealthKit）<br><a href="https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/heartratevariabilitysdnn">https://developer.apple.com/<wbr>documentation/<wbr>healthkit/<wbr>hkquantitytypeidentifier/<wbr>heartratevariabilitysdnn</a></li>
+  <li id="r2">Apple サポート「<span style="white-space:nowrap"><span style="white-space:nowrap">Apple Watch</span></span>で夜間と日中のバイタルを把握する」（2026年9月30日公開）<br><a href="https://support.apple.com/ja-jp/120142">https://support.apple.com/<wbr>ja-jp/<wbr>120142</a></li>
+  <li id="r3">Shaffer F, Ginsberg JP. An Overview of Heart Rate Variability Metrics and Norms. Front Public Health. 2017;5:258.<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5624990/">https://pmc.ncbi.nlm.nih.gov/<wbr>articles/<wbr>PMC5624990/</a></li>
+  <li id="r4">Nunan D, et al. A quantitative systematic review of normal values for short-term heart rate variability in healthy adults. Pacing Clin Electrophysiol. 2010;33(11):1407-1417.<br><a href="https://pubmed.ncbi.nlm.nih.gov/20663071/">https://pubmed.ncbi.nlm.nih.gov/<wbr>20663071/</a></li>
+  <li id="r5">Umetani K, et al. Twenty-four hour time domain heart rate variability and heart rate: relations to age and gender over nine decades. J Am Coll Cardiol. 1998;31(3):593-601.<br><a href="https://pubmed.ncbi.nlm.nih.gov/9502641/">https://pubmed.ncbi.nlm.nih.gov/<wbr>9502641/</a></li>
+  <li id="r6">Natarajan A, et al. Heart rate variability with photoplethysmography in 8 million individuals: a cross-sectional study. Lancet Digit Health. 2020;2(12):e650-e657.<br><a href="https://pubmed.ncbi.nlm.nih.gov/33328029/">https://pubmed.ncbi.nlm.nih.gov/<wbr>33328029/</a></li>
+  <li id="r7">Pietilä J, et al. Acute Effect of Alcohol Intake on Cardiovascular Autonomic Regulation During the First Hours of Sleep in a Large Real-World Sample of Finnish Employees: Observational Study. JMIR Ment Health. 2018;5(1):e23.<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5878366/">https://pmc.ncbi.nlm.nih.gov/<wbr>articles/<wbr>PMC5878366/</a></li>
+</ol>
+
+<footer>
+  <p>読みもの: <a href="../caffeine/">カフェイン・コーヒーは何時まで？ 研究の目安と、自分の記録で比べる方法</a> ／ <a href="../dinner/">夕食は寝る何時間前までに済ませる？ 厚生労働省の目安と研究の数字</a> ／ <a href="../alcohol/">お酒は寝る何時間前まで？ 寝酒と睡眠、厚生労働省の資料と研究の数字</a> ／ <a href="../bedtime/">休日の寝だめは意味ある？ 社会的時差ボケと睡眠、厚生労働省の資料と研究の数字</a></p>
+  <p><a href="../../">ヴェクリスのトップ</a> ／ <a href="../../support/">サポート・お問い合わせ</a> ／ <a href="../../privacy/">プライバシーポリシー</a></p>
+  <p>最終更新: 2026年11月6日</p>
+</footer>
+
+</div>
+</body>
+</html>
